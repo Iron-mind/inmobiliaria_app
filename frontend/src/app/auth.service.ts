@@ -1,0 +1,49 @@
+import { HttpErrorResponse } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthService {
+  private token: string;
+  private isAuthenticated = false;
+
+  constructor(
+    private http: HttpClient
+  ) {
+    // Aquí puedes inicializar el token desde el almacenamiento local si está disponible
+    this.token = localStorage.getItem('token') as string;
+
+  }
+
+  login(email: string, password: string) {
+    const requestBody = { email: email, password: password };
+    this.http.post<any>('http://localhost:3003/api/session', requestBody).subscribe(
+      (response:{token:string}) => {
+        this.token = response.token; // Reemplaza 'token' por la clave que corresponda a tu backend
+        localStorage.setItem('token', this.token); // Almacena el token en el almacenamiento local
+        alert('Inicio de sesión exitoso')
+      },
+      (err:HttpErrorResponse) => {
+        console.error('Error en la solicitud de inicio de sesión:', err);
+      }
+    );
+  }
+
+  logout(): void {
+    this.token = ''; // Elimina el token actual
+    localStorage.removeItem('token'); // Elimina el token del almacenamiento local
+  }
+
+  isLoggedIn() {
+    if (this.isAuthenticated) {
+      return ; // Si el estado de autenticación ya está establecido como verdadero, no se realiza la solicitud POST adicional
+    } else {
+      const token = localStorage.getItem('token') as string; // Recupera el token del almacenamiento local
+     
+      return this.http.post<{validation:boolean}>('http://localhost:3003/api/session/verifytoken', {token});
+
+    }
+  }
+}

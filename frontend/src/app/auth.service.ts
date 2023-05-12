@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,8 @@ export class AuthService {
   private isAuthenticated = false;
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) {
     // Aquí puedes inicializar el token desde el almacenamiento local si está disponible
     this.token = localStorage.getItem('token') as string;
@@ -19,11 +21,11 @@ export class AuthService {
 
   login(email: string, password: string) {
     const requestBody = { email: email, password: password };
-    this.http.post<any>('http://localhost:3003/api/session', requestBody).subscribe(
+    return this.http.post<any>('http://localhost:3003/api/session', requestBody).subscribe(
       (response:{token:string}) => {
         this.token = response.token; // Reemplaza 'token' por la clave que corresponda a tu backend
         localStorage.setItem('token', this.token); // Almacena el token en el almacenamiento local
-        alert('Inicio de sesión exitoso')
+        return this.router.navigate(['/home']);
       },
       (err:HttpErrorResponse) => {
         console.error('Error en la solicitud de inicio de sesión:', err);

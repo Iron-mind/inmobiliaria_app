@@ -1,0 +1,45 @@
+div {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+  
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #f2f2f2;
+      padding: 32px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+      mat-form-field {
+        margin-bottom: 16px;
+  
+        input {
+          background-color: #ffffff;
+          padding-top: 24px; // Ajusta según tus necesidades
+  
+          &:focus {
+            ~ span.mat-form-field-label {
+              top: 4px; // Ajusta según tus necesidades
+              font-size: 12px; // Ajusta según tus necesidades
+            }
+          }
+  
+          &:not(:placeholder-shown) {
+            ~ span.mat-form-field-label {
+              top: 4px; // Ajusta según tus necesidades
+              font-size: 12px; // Ajusta según tus necesidades
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  
+  
+  
+  

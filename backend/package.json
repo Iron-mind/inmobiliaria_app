@@ -1,0 +1,32 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "inmobiliaria",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Iron-mind/inmobiliaria_app.git"
+  },
+  "keywords": [
+    "app",
+    "web",
+    "maps"
+  ],
+  "author": "juan david (iron-mind)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Iron-mind/inmobiliaria_app/issues"
+  },
+  "homepage": "https://github.com/Iron-mind/inmobiliaria_app#readme",
+  "dependencies": {
+    "cors": "2.8.5",
+    "dotenv": "16.0.3",
+    "express": "4.18.2",
+    "mongoose": "7.1.1",
+    "nodemon": "2.0.22"
+  }
+}

@@ -17,9 +17,7 @@ export class HighlightDirective {
     private element: ElementRef
 
   ) {
-     //aqui ya puedo modificar el dom
-    // this.element.nativeElement.style.backgroundColor = 'red'
-
+     
   }
 
 }

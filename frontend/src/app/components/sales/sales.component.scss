@@ -1,0 +1,104 @@
+@import '~@angular/material/theming';
+
+.menu {
+  display: flex;
+  justify-content: start;
+  margin-top: 20px;
+  margin-left: 15px;
+
+
+  button {
+    margin-right: 10px;
+    padding: 8px 16px;
+    border: none;
+    background-color: #2195f3b7;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: #6396c9;
+    }
+  }
+}
+
+// Estilos para las secciones
+ng-container {
+  display: block;
+  margin-top: 20px;
+  padding: 16px;
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+}
+
+// Estilos para la sección "ventas"
+#sales {
+  background-color: #e8f5e9;
+
+  p {
+    color: #4caf50;
+  }
+}
+
+// Estilos para la sección "compras"
+#markers {
+  background-color: #ffe0b2;
+
+  p {
+    color: #ff5722;
+  }
+}
+
+section {
+ padding: 20px;
+ margin: 15px;
+}
+
+h1 {
+  font-size: 1.5em;
+  margin: 0;
+  color: #333;
+}
+
+// Estilos para la tabla
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  // Estilos para las celdas de encabezado
+  th {
+    padding: 12px;
+    text-align: left;
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  // Estilos para las celdas de datos
+  td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  // Estilos para las filas impares (opcional)
+  tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  // Estilos para las filas al pasar el cursor por encima (opcional)
+  tr:hover {
+    background-color: #eaeaea;
+  }
+  

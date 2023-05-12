@@ -1,0 +1,39 @@
+<div class="menu">
+    <button (click)="setSection('estadisticas')">Estadísticas</button>
+    <button (click)="setSection('info')">Info</button>
+  
+</div>
+
+<ng-container *ngIf="seccionActual === 'estadisticas'; then stats"></ng-container>
+<ng-container *ngIf="seccionActual === 'info'; then info"></ng-container>
+
+<ng-template #stats>
+    <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Value</th>
+            <th>Description</th>
+            <th>Created At</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item  of items$ | async">
+            <td>{{ item.name }}</td>
+            <td>{{ item.value }}</td>
+            <td>{{ item.description }}</td>
+            <td>{{ item.createdAt }}</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      
+</ng-template>
+
+<ng-template #info>
+    <section>
+        <h1>Datos</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam, fuga illum natus cum quidem vero accusamus iusto qui perferendis tempora earum autem, mollitia rem optio in eius? Consectetur, quis fugit?</p>
+    </section>
+   
+</ng-template>

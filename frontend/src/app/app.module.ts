@@ -14,6 +14,9 @@ import { HomeComponent } from './components/home/home.component'
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { MatButtonModule, MatInputModule } from '@angular/material';
+import { MatTableModule } from '@angular/material/table';
+import { SalesComponent } from './components/sales/sales.component';
+import { MarkersComponent } from './components/markers/markers.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +26,9 @@ import { MatButtonModule, MatInputModule } from '@angular/material';
     ShortenTextPipe,
     HighlightDirective,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    SalesComponent,
+    MarkersComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,8 @@ import { MatButtonModule, MatInputModule } from '@angular/material';
     HttpClientModule,
     MatButtonModule,
     MatInputModule,
-    MatFormFieldModule // Agrega esta línea
+    MatFormFieldModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

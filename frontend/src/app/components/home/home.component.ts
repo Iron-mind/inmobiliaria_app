@@ -8,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   constructor() { }
+  seccionActual: string = 'ventas'; 
 
+  setSection(section: string) {
+    this.seccionActual = section;
+  }
   ngOnInit(): void {
   }
 

@@ -22,9 +22,13 @@ npm run start
 
 
 # Como debe verse
+## Login
 ![Login](imgs-md/login.png)   
-![estadisticas ](imgs-md/stats.png)   
-![markers  ](imgs-md/markers.png)   
+## Estadísticas
+![estadisticas ](imgs-md/stats.png)  
+## Mapa 
+![markers  ](imgs-md/markers.png)  
+## Formulario 
 ![markers  ](imgs-md/markerform.png)   
 
 

@@ -1,0 +1,16 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <label for="latitude">latitud</label>
+    <mat-form-field>      
+      <input matInput formControlName="latitude" />
+    </mat-form-field>
+    <label for="longitude">Longitud</label>
+    <mat-form-field>
+      <input matInput formControlName="longitude" />
+    </mat-form-field>
+    <label for="description">descripcion</label>
+    <mat-form-field>
+      
+      <input matInput formControlName="description" />
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!myForm.valid">Enviar</button>
+  </form>

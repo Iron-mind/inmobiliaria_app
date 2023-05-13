@@ -1,0 +1,37 @@
+// Estilos para el formulario
+form {
+    background-color: #f9f7f5; // Fondo blanco beige
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+  }
+  
+  // Estilos para los campos de entrada
+  mat-form-field {
+    width: 50%;
+    margin-bottom: 16px;
+    background-color: #f0e5da;
+    border-radius: 3px;
+  }
+  
+  // Estilos para los botones
+  button {
+    width: 50%;
+    background-color: #2196f3;
+    color: #f9f7f5;
+  }
+
+// Estilos para el placeholder
+.placeholder-content {
+    color: #888888; // Color grisaseo
+  }
+  
+  input:focus::placeholder {
+    color: transparent; // El placeholder se vuelve transparente al enfocar el campo
+  }
+
+  
+  

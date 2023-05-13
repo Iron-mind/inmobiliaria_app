@@ -1,1 +1,28 @@
-<p>markers works!</p>
+<div class="menu">
+    <button (click)="setSection('proyectos')">Proyectos</button>
+    <button (click)="setSection('info')">Info</button>
+
+</div>
+
+<ng-container *ngIf="seccionActual === 'proyectos'; then markers"></ng-container>
+<ng-container *ngIf="seccionActual === 'info'; then info"></ng-container>
+
+
+
+<ng-template #markers>
+    <button mat-button  (click)="addMarker()">Añadir</button>
+    <app-markform *ngIf="addingMarker"></app-markform>
+    <div id="map">
+        ...
+    </div>
+    
+</ng-template>
+
+<ng-template #info>
+    <section>
+        <h1>Datos de proyectos</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam, fuga illum natus cum quidem vero accusamus
+            iusto qui perferendis tempora earum autem, mollitia rem optio in eius? Consectetur, quis fugit?</p>
+    </section>
+
+</ng-template>

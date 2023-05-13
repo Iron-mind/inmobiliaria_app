@@ -1,8 +1,0 @@
-<!-- <p>img works!</p>
-<h1>{{valueInit}}</h1> -->
-<img [src]="src" class="" (load)="onLoadImg()"  (error)="imgError()" *ngIf="src;else defImage">
-  <!-- <h2 >{{counter}}</h2> -->
-<ng-template #defImage> <!--con el evento error ya no es necesario el else-->
-  <img class="small-img" src="https://st4.depositphotos.com/4329009/19956/v/450/depositphotos_199565072-stock-illustration-creative-vector-illustration-default-avatar.jpg" alt="">
-</ng-template>
-<!-- <h2>{{src}}</h2> -->

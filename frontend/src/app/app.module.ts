@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatFormFieldModule} from '@angular/material/form-field'; 
 
 import { AppRoutingModule } from './app-routing.module';
-import { ImgComponent } from './components/img/img.component';
 import { NavComponent } from './components/nav/nav.component';
 import {HttpClientModule } from '@angular/common/http';
 import { ReversePipe } from './pipes/reverse.pipe';
@@ -13,14 +12,15 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { HomeComponent } from './components/home/home.component'
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
-import { MatButtonModule, MatInputModule } from '@angular/material';
+import { MatInputModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { SalesComponent } from './components/sales/sales.component';
 import { MarkersComponent } from './components/markers/markers.component';
+import { MarkformComponent } from './components/markform/markform.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ImgComponent,
     NavComponent,
     ReversePipe,
     ShortenTextPipe,
@@ -28,7 +28,9 @@ import { MarkersComponent } from './components/markers/markers.component';
     HomeComponent,
     LoginComponent,
     SalesComponent,
-    MarkersComponent
+    MarkersComponent,
+    MarkformComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,7 @@ import { MarkersComponent } from './components/markers/markers.component';
     MatInputModule,
     MatFormFieldModule,
     MatTableModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Marker } from '../../models/marker.model';
+import { defaultIfEmpty } from 'rxjs';
 
 @Component({
   selector: 'app-markform',
@@ -12,8 +14,10 @@ export class MarkformComponent implements OnInit {
     longitude: new FormControl('', [Validators.required]),
     description: new FormControl('', [Validators.required]),
   });
-
+  @Output() setMarker = new EventEmitter<Marker>()
+  
   onSubmit() {
+    this.setMarker.emit(this.myForm.value as unknown as Marker);
     console.log(this.myForm.value);
   }
   constructor() { }

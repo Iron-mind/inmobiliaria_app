@@ -17,7 +17,7 @@ router.post("/", async (req, res) => {
     try {
         const newMarker = new Marker(req.body);
         await newMarker.save();
-        res.send("Marcador creado exitosamente");
+        res.send({msg:"Marcador creado exitosamente"});
     }
     catch (error) {
         console.log(error);

@@ -6,6 +6,7 @@
 
 <ng-container *ngIf="seccionActual === 'ventas'; then sales"></ng-container>
 <ng-container *ngIf="seccionActual === 'compras' then markers"></ng-container>
+<ng-container *ngIf="seccionActual === 'default' then default"></ng-container>
 
 <ng-template #sales>
     <app-sales></app-sales>
@@ -13,4 +14,8 @@
 
 <ng-template #markers>
     <app-markers></app-markers>
+</ng-template>
+
+<ng-template #default>
+    <h1>Escoge una sección</h1>
 </ng-template>

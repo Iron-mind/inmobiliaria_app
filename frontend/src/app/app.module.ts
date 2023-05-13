@@ -18,6 +18,7 @@ import { MatTableModule } from '@angular/material/table';
 import { SalesComponent } from './components/sales/sales.component';
 import { MarkersComponent } from './components/markers/markers.component';
 import { MarkformComponent } from './components/markform/markform.component';
+import { MapComponent } from './components/map/map.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import { MarkformComponent } from './components/markform/markform.component';
     SalesComponent,
     MarkersComponent,
     MarkformComponent,
+    MapComponent,
     
   ],
   imports: [
@@ -42,6 +44,7 @@ import { MarkformComponent } from './components/markform/markform.component';
     MatFormFieldModule,
     MatTableModule,
     ReactiveFormsModule,
+    // NoopAnimationsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

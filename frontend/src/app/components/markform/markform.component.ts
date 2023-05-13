@@ -18,7 +18,6 @@ export class MarkformComponent implements OnInit {
   
   onSubmit() {
     this.setMarker.emit(this.myForm.value as unknown as Marker);
-    console.log(this.myForm.value);
   }
   constructor() { }
 

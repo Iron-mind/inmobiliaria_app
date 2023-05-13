@@ -19,7 +19,7 @@ export class AuthGuard implements CanActivate {
         return response.validation ? true : this.router.parseUrl('/login');
       })
     );
-    console.log(isLoggedIn$);
+
    return isLoggedIn$ ? isLoggedIn$: of(this.router.parseUrl('/login'));
   }
 }

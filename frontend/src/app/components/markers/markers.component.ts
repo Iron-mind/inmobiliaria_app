@@ -40,7 +40,7 @@ export class MarkersComponent implements OnInit {
   }
   postMarker(marker: Marker) {
     this.http.post(environment.apiURL+'/marker', marker).subscribe((res) => {
-      console.log(res);
+
       this.addingMarker = false;
       this.getMarker();
     })

@@ -1,0 +1,41 @@
+[{
+  "name": "Inmueble A",
+  "value": 1000000,
+  "description": "Amplia casa de dos pisos en excelente ubicación.",
+  "createdAt": {
+    "$date": "2023-05-12T22:57:51.851Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-12T22:57:51.851Z"
+  }
+},{
+  "name": "Inmueble B",
+  "value": 75000,
+  "description": "Departamento moderno con vista al mar.",
+  "createdAt": {
+    "$date": "2023-05-12T22:58:15.449Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-12T22:58:15.449Z"
+  }
+},{
+  "name": "Inmueble C",
+  "value": 500000,
+  "description": "Apartamento moderno en el centro de la ciudad.",
+  "createdAt": {
+    "$date": "2023-05-13T15:38:59.543Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-13T15:38:59.543Z"
+  }
+},{
+  "name": "Inmueble D",
+  "value": 850000,
+  "description": "Casa adosada con jardín y patio trasero en un vecindario tranquilo.",
+  "createdAt": {
+    "$date": "2023-05-13T15:39:11.594Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-13T15:39:11.594Z"
+  }
+}]

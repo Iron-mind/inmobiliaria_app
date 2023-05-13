@@ -29,6 +29,7 @@ export class AuthService {
         return this.router.navigate(['/home']);
       },
       (err:HttpErrorResponse) => {
+        alert(err.error.msg)
         console.error('Error en la solicitud de inicio de sesión:', err);
       }
     );

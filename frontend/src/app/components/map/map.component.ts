@@ -28,16 +28,14 @@ export class MapComponent implements OnInit {
       maxZoom: 20,
       attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
     }).addTo(this.map)
-    if (this.map) {
-      // this.getMarker();
-    }
+
 
   }
 
   ngAfterViewInit() {
     if (this.map) {
       this.markers?.subscribe((markers) => {
-        console.log('estan llegando',markers);
+
         markers.forEach((mark: any) => {
           const m = marker([mark.latitude, mark.longitude]).addTo(this.map);
           m.bindPopup(mark.description);

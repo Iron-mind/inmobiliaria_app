@@ -3,6 +3,8 @@
 ## requerimientos
 - Tener el puerto configurado: En la carpeta backend hay archivo .env que no oculté para facilitar ejecución
 
+- Conexión a internet: Para poder usar la api maps
+
 - Una base de datos mongodb llamada inmobiliaria. NO es necesario crear las colecciones. Ya se crearan cuando ejecute el backend. Despues de ejecutar el backend puede añadir la data de los archivos .json que hay en la carpeta principal.
 
 <!-- insertar imagen -->

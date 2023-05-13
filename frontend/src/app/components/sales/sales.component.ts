@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
 interface Sale {
   name: string;
   description: string;
@@ -26,7 +27,7 @@ export class SalesComponent implements OnInit {
     this.seccionActual = section;
   }
   ngOnInit(): void {
-    this.items$ = this.http.get<Sale[]>('http://localhost:3003/api/sale');
+    this.items$ = this.http.get<Sale[]>(environment.apiURL+'/sale');
     this.items$.subscribe(items => {
       return items;
     });

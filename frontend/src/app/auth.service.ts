@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,7 @@ export class AuthService {
 
   login(email: string, password: string) {
     const requestBody = { email: email, password: password };
-    return this.http.post<any>('http://localhost:3003/api/session', requestBody).subscribe(
+    return this.http.post<any>(environment.apiURL + '/session', requestBody).subscribe(
       (response:{token:string}) => {
         this.token = response.token; // Reemplaza 'token' por la clave que corresponda a tu backend
         localStorage.setItem('token', this.token); // Almacena el token en el almacenamiento local
@@ -44,7 +45,7 @@ export class AuthService {
     } else {
       const token = localStorage.getItem('token') as string; // Recupera el token del almacenamiento local
      
-      return this.http.post<{validation:boolean}>('http://localhost:3003/api/session/verifytoken', {token});
+      return this.http.post<{validation:boolean}>(environment.apiURL+'/session/verifytoken', {token});
 
     }
   }

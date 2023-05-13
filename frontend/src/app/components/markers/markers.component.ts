@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subject, defaultIfEmpty, map } from 'rxjs';
 import { Marker } from '../../models/marker.model';
+import { environment } from '../../../environments/environment';
 
 
 @Component({
@@ -38,7 +39,7 @@ export class MarkersComponent implements OnInit {
     
   }
   postMarker(marker: Marker) {
-    this.http.post('http://localhost:3003/api/marker', marker).subscribe((res) => {
+    this.http.post(environment.apiURL+'/marker', marker).subscribe((res) => {
       console.log(res);
       this.addingMarker = false;
       this.getMarker();
@@ -46,7 +47,7 @@ export class MarkersComponent implements OnInit {
   }
   getMarker() {
     //traer markers
-    this.http.get<Marker[]>('http://localhost:3003/api/marker').pipe(
+    this.http.get<Marker[]>(environment.apiURL+'/marker').pipe(
       map((markers) => {
         this.dataSubject.next(markers);
         return markers;

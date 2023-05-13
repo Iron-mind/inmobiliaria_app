@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,7 +9,9 @@ import { AuthService } from '../../auth.service';
 export class LoginComponent implements OnInit {
   constructor(
     private authService: AuthService,
-  ) { }
+    private router: Router
+  ) {
+   }
   user = {
     email: '',
     password: ''
@@ -25,7 +27,15 @@ export class LoginComponent implements OnInit {
     
   }
   ngOnInit(): void {
+    this.authService.isLoggedIn()?.subscribe((res) => {
+      if(res.validation){
+        this.router.navigateByUrl('/home');
+      }})
     
   }
+  ngAfterViewInit(): void {
+    this.router.navigate(['/home']);
+
+   }
 
 }
